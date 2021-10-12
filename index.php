@@ -21,12 +21,12 @@
                     echo '<div class="card">';
                         
                         echo '<img src="'. $diskInfo['poster'] .'" alt="'. $diskInfo['title'] .'">
-                                <h1>
+                                <h2>
                                  ' . $diskInfo['title'] . '
-                                </h1>
+                                </h2>
                                 <h3>
                                     ' . $diskInfo['author'] . ' <br>
-                                    ' . $diskInfo['year'] . '
+                                    <span> ' . $diskInfo['year'] . ' </span>
                                 </h3>';
                     echo '</div>';
                 }
