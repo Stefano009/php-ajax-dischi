@@ -15,16 +15,22 @@
     </header>
     <main>
         <div class="wrapper">
-            <div class="card">
-                <img src="./img/spotify.png" alt="">
-                <h1>
-                    new jersey
-                </h1>
-                <h3>
-                    Bon Jovi <br>
-                    1988
-                </h3>
-            </div>
+            <?php 
+                include __DIR__ . '/database.php';
+                foreach($db as $diskInfo){     
+                    echo '<div class="card">';
+                        
+                        echo '<img src="'. $diskInfo['poster'] .'" alt="'. $diskInfo['title'] .'">
+                                <h1>
+                                 ' . $diskInfo['title'] . '
+                                </h1>
+                                <h3>
+                                    ' . $diskInfo['author'] . ' <br>
+                                    ' . $diskInfo['year'] . '
+                                </h3>';
+                    echo '</div>';
+                }
+            ?>
         </div>
     </main>
 </body>
