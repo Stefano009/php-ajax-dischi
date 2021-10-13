@@ -16,7 +16,7 @@
                 <img src="./img/spotify.png" alt="spotify-icon">
                 <div>
                     <label for="genre"> Seleziona il tuo genere preferito</label>
-                <select v-model="selected" class="genre" name="genre" id="genre">
+                <select @change="filterGenre" v-model="selected" class="genre" name="genre" id="genre">
                     <option value="All">
                         All
                     </option>
@@ -38,7 +38,7 @@
         </header>
         <main>
             <div class="wrapper">
-                <div class="card" v-for="disk in filterGenre">                        
+                <div class="card" v-for="disk in filter">                        
                     <img :src="disk.poster" :alt="disk.title">
                             <h2>
                                 {{disk.title}}
