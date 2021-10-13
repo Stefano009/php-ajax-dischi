@@ -12,10 +12,23 @@ body {
 .nav {
     height: 70px;
     background-color: #2E3A46;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav img {
     height: 100%;
+}
+
+label {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.genre {
+    width: 200px;
+    margin-right: 50px;
 }
 
 main {

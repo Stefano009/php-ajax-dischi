@@ -10,26 +10,48 @@
     <title>Vue-dischi</title>
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <img src="./img/spotify.png" alt="spotify-icon">
-        </div>
-    </header>
-    <main>
-        <div id="root" class="wrapper">
-            <div class="card" v-for="disk in db">                        
-                <img :src="disk.poster" :alt="disk.title">
-                        <h2>
-                            {{disk.title}}
-                        </h2>
-                            <h3>
-                                {{disk.author}}<br>
-                                <span>{{disk.year}}</span>
-                            </h3>
+    <div id="root" class="outer-wrapper">
+        <header>
+            <div class="nav">
+                <img src="./img/spotify.png" alt="spotify-icon">
+                <div>
+                    <label for="genre"> Seleziona il tuo genere preferito</label>
+                <select v-model="selected" class="genre" name="genre" id="genre">
+                    <option value="all">
+                        All
+                    </option>
+                    <option value="jazz">
+                        jazz
+                    </option>
+                    <option value="metal">
+                        metal
+                    </option>
+                    <option value="pop">
+                        pop
+                    </option>
+                    <option value="rock">
+                        rock
+                    </option>
+                </select>
                 </div>
             </div>
-        </div>
-    </main>
+        </header>
+        <main>
+            <div class="wrapper">
+                <div class="card" v-for="disk in db">                        
+                    <img :src="disk.poster" :alt="disk.title">
+                            <h2>
+                                {{disk.title}}
+                            </h2>
+                                <h3>
+                                    {{disk.author}}<br>
+                                    <span>{{disk.year}}</span>
+                                </h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

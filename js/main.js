@@ -4,6 +4,7 @@ const app = new Vue({
     el: '#root',
     data: {
         db: [],
+        selected: 'All'
     },
     created: function() {
         axios.get('http://localhost/php-ajax-dischi/api/server.php').
@@ -11,6 +12,11 @@ const app = new Vue({
             return this.db = res.data;
         })
 
+    },
+    methods() {
+        function filter(array) {
+
+        }
     }
 
 
