@@ -16,7 +16,7 @@
                 <img src="./img/spotify.png" alt="spotify-icon">
                 <div>
                     <label for="genre"> Seleziona il tuo genere preferito</label>
-                <select @change="filterGenre" v-model="selected" class="genre" name="genre" id="genre">
+                <select @change="getGenre" v-model="selected" class="genre" name="genre" id="genre">
                     <option value="All">
                         All
                     </option>
