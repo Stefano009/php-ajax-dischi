@@ -15,6 +15,9 @@
     </header>
     <main>
         <div class="wrapper">
+
+            <!-- puoi scrivere tutto in modo comodo aprendo il foreach e chiudendolo subito sotto e la graffa finale puoi chiuderla sotto tytto aprendo e richiudendo il tag php intorno
+            comodo perchè cosi puoi scrivere l'html normalmente e aprire e chiudere php attorno, piu php aperti ma meno possibilità di sbagliare -->
             <?php 
                 include __DIR__ . '/database.php';
                 foreach($db as $diskInfo){     
