@@ -4,7 +4,7 @@ const app = new Vue({
     el: '#root',
     data: {
         db: [],
-        selected: '',
+        selected: 'All',
         genre: [
             'All',
             'Jaxx',
