@@ -17,19 +17,19 @@
                 <div>
                     <label for="genre"> Seleziona il tuo genere preferito</label>
                 <select v-model="selected" class="genre" name="genre" id="genre">
-                    <option value="all">
+                    <option value="All">
                         All
                     </option>
-                    <option value="jazz">
+                    <option value="Jazz">
                         jazz
                     </option>
-                    <option value="metal">
+                    <option value="Metal">
                         metal
                     </option>
-                    <option value="pop">
+                    <option value="Pop">
                         pop
                     </option>
-                    <option value="rock">
+                    <option value="Rock">
                         rock
                     </option>
                 </select>
@@ -38,7 +38,7 @@
         </header>
         <main>
             <div class="wrapper">
-                <div class="card" v-for="disk in db">                        
+                <div class="card" v-for="disk in filterGenre">                        
                     <img :src="disk.poster" :alt="disk.title">
                             <h2>
                                 {{disk.title}}

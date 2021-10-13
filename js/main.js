@@ -4,7 +4,14 @@ const app = new Vue({
     el: '#root',
     data: {
         db: [],
-        selected: 'All'
+        selected: '',
+        genre: [
+            'All',
+            'Jaxx',
+            'Metal',
+            'Pop',
+            'Rock'
+        ]
     },
     created: function() {
         axios.get('http://localhost/php-ajax-dischi/api/server.php').
@@ -13,9 +20,16 @@ const app = new Vue({
         })
 
     },
-    methods() {
-        function filter(array) {
-
+    computed: {
+        filterGenre() {
+            if (this.selected === '' || this.selected === 'All') {
+                return this.db;
+            }
+            const filter = this.db.filter(item => {
+                if (item.genre === this.selected)
+                    return item.genre
+            })
+            return filter
         }
     }
 
