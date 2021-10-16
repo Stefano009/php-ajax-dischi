@@ -1,7 +1,7 @@
 <?php 
     require __DIR__ . '/../database.php';
     $selected = $_GET["genre"];
-    if($selected == 'All'){
+    if($selected == 'All' || $selected == '' ){
         $filtered=$db;    
     }else {
         foreach ($db as $disk){
@@ -10,6 +10,7 @@
             }
         }
     }
+    
     header('Content-Type: application/json');
     
     echo json_encode($filtered);

@@ -5,23 +5,30 @@ const app = new Vue({
     data: {
         filter: [],
         selected: 'All',
-        genre: [
-            'All',
-            'Jaxx',
-            'Metal',
-            'Pop',
-            'Rock'
-        ]
+        genres: [],
     },
     created: function() {
+        this.getDb();
         this.getGenre();
     },
     methods: {
-        getGenre() {
+        getDb() {
             axios.get('api/server.php?genre=' + this.selected). //se lo scrivo direttamente come api/server faccio una chiamata relativa infatti api/server sta sullo stesso livello del mio index
             then((res) => {
                 return this.filter = res.data;
             })
+        },
+        getGenre() {
+            axios.get('api/server.php?').
+            then((res) => {
+                let data = res.data;
+                for (let i = 0; i < data.length; i++) {
+                    if (!this.genres.includes(data[i].genre)) {
+                        this.genres.push(data[i].genre);
+                    }
+                }
+            })
+
         }
     },
     computed: {

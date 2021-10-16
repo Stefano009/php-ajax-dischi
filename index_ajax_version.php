@@ -16,21 +16,12 @@
                 <img src="./img/spotify.png" alt="spotify-icon">
                 <div>
                     <label for="genre"> Seleziona il tuo genere preferito</label>
-                <select @change="getGenre" v-model="selected" class="genre" name="genre" id="genre">
+                <select @change="getDb" v-model="selected" class="genre" name="genre" id="genre">
                     <option value="All">
                         All
                     </option>
-                    <option value="Jazz">
-                        jazz
-                    </option>
-                    <option value="Metal">
-                        metal
-                    </option>
-                    <option value="Pop">
-                        pop
-                    </option>
-                    <option value="Rock">
-                        rock
+                    <option v-for="genre in genres" :value="genre">
+                            {{genre}}
                     </option>
                 </select>
                 </div>
